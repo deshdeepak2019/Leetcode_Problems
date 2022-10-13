@@ -11,14 +11,38 @@
  */
 class Solution {
 public:
-    int ans=0;
+   int hleft(TreeNode* root){
+       int hght=0;
+       if(root==0) return 0;
+       while(root){
+           hght++;
+           root=root->left;
+       }
+       return hght;
+   }
+    int hright(TreeNode* root){
+       int hght=0;
+       if(root==0) return 0;
+       while(root){
+           hght++;
+           root=root->right;
+       }
+       return hght;
+   }
     int countNodes(TreeNode* root) {
-        if(root==0){
-            return 0;
+        // if(root==0){
+        //     return 0;
+        // }
+        // ans++;
+        // countNodes(root->left);
+        // countNodes(root->right);
+        // return ans;
+        if(!root) return 0;
+        int l=hleft(root);
+        int r=hright(root);
+        if(l==r){
+            return (1<<l)-1;
         }
-        ans++;
-        countNodes(root->left);
-        countNodes(root->right);
-        return ans;
+        return 1+countNodes(root->left)+countNodes(root->right);
     }
 };
