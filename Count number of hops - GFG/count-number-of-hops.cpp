@@ -13,7 +13,7 @@ class Solution
         if(n==1) return 1;
         if(n==2) return 2;
         if(n==3) return 4;
-        vector<long long>dp(n,0);
+        vector<long long>dp(n,-1);
         dp[0]=1;
         dp[1]=2;
         dp[2]=4;
