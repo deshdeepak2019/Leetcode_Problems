@@ -52,7 +52,7 @@ class Solution
     struct node *reverse (struct node *head, int k)
     { 
          if(!head or head->next==NULL) return head;
-         struct node* prev=NULL,*curr=head,*temp=NULL;
+          node* prev=NULL,*curr=head,*temp=NULL;
          int cnt=0;
          while(curr!=NULL and cnt<k){
              temp=curr->next;
