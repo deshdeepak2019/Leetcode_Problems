@@ -115,7 +115,7 @@ struct Node
 }; */
 vector<int> reverseLevelOrder(Node *root)
 {
-    i
+    if(root==0) return {};
     Node* node=root;
    vector<int>v;
    queue<Node*>q;
