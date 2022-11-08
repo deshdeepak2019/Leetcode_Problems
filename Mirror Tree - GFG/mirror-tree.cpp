@@ -114,9 +114,10 @@ class Solution {
         if(node==0) return ;
         mirror(node->left);
         mirror(node->right);
-        Node* temp=node->right;
-        node->right=node->left;
-        node->left=temp;
+        // Node* temp=node->right;
+        // node->right=node->left;
+        // node->left=temp;
+        swap(node->right,node->left);
     }
 };
 
