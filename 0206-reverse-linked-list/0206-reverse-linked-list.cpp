@@ -20,9 +20,9 @@ public:
         curr->next=prev;
     }
     ListNode* reverseList(ListNode* head) {
-        // if(head==NULL or head->next==NULL){
-        //     return head;
-        // }
+        if(head==NULL or head->next==NULL){
+            return head;
+        }
         // ListNode *prev=NULL, *curr=head,*temp=NULL;
         // while(curr){
         //     temp=curr->next;
@@ -31,8 +31,13 @@ public:
         //     curr=temp;
         // }
         // return prev;
-        ListNode* curr=head,*prev=NULL;
-        reverse(head,curr,prev);
-        return head;
+        // ListNode* curr=head,*prev=NULL;
+        // reverse(head,curr,prev);
+        // return head;
+       
+        ListNode *chotahead=reverseList(head->next);
+        head->next->next=head;
+        head->next=NULL;
+        return chotahead;
     }
 };
