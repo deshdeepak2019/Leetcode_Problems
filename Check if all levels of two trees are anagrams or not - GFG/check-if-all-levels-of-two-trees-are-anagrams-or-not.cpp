@@ -126,12 +126,6 @@ class Solution{
         sort(temp.begin(),temp.end());
         v2.push_back(temp);
     }
-    // for(int i=0;i<v1.size();i++){
-    //     vector<int>tmp=v2[i];
-    //     for(int j=0;j<tmp.size();j++){
-    //         cout<<tmp[j]<<" ";
-    //     }
-    // }
     for(int i=0;i<v1.size();i++){
         if(v1[i]!=v2[i]){
             return 0;
