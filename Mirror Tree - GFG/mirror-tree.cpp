@@ -115,7 +115,6 @@ class Solution {
         swap(node->right,node->left);
         mirror(node->left);
         mirror(node->right);
-        
     }
 };
 
