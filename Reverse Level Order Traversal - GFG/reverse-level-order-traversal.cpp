@@ -125,13 +125,14 @@ vector<int> reverseLevelOrder(Node *root)
        for(int i=0;i<n;i++){
            node=q.front();
            q.pop();
+           v.push_back(node->data);
            if(node->right){
                q.push(node->right);
            }
            if(node->left){
                q.push(node->left);
            }
-           v.push_back(node->data);
+           
        }
    }
    reverse(v.begin(),v.end());
