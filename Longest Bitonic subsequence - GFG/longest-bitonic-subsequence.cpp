@@ -7,8 +7,7 @@ class Solution{
 	public:
 	int LongestBitonicSequence(vector<int>nums)
 	{
-	    // code here
-	    int n=nums.size();
+int n=nums.size();
 	    vector<int>v1(n,1);
 	    vector<int>v2(n,1);
 	    for(int i=0;i<n;i++)
@@ -32,8 +31,7 @@ class Solution{
 	      ans=max(ans,v1[i]+v2[i]-1);
 	      
 	     return ans;
-	    
-	}
+	    	}
 };
 
 //{ Driver Code Starts.
