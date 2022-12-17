@@ -9,40 +9,26 @@ using namespace std;
 
 class Solution {
   public:
-    long long maxGcd(int n) {
-        if(n==2) return 2;
-        if(n==3) return 3;
-        vector<int>v;
-        int c=0;
-        v.push_back(n);
-        v.push_back(n-1);
-        int cnt=2;
-        int a=n-2;
-        while(cnt--){
-            if(a<=0){
-                break;
+    long long gcd(long long A, long long B) {
+        if (B == 0) return A;
+        return gcd(B, A % B);
+    }
+    long long maxGcd(int N) {
+        if (N == 4) return 12;
+        long long a = N * (N - 1);
+        long long b = a;
+        b *= (N - 2) / gcd(b, N - 2);
+        b *= (N - 3) / gcd(b, N - 3);
+        long long c = a, f = 0;
+        for (int i = N - 2; i >= 1; i--) {
+            if (gcd(c, i) == 1) {
+                a *= i;
+                c *= i;
+                f++;
             }
-            if(v.size()==4) break;
-         for(int i=0;i<v.size();i++){
-             if(__gcd(v[i],a)==1){
-                 c++;
-             }
-         }
-         if(c==v.size()){
-             v.push_back(a);
-             
-         }else{
-             cnt++;
-         }
-         c=0;
-         a--;
+            if (f == 2) break;
         }
-        long long int ans=1;
-        for(auto i:v){
-            ans=ans*i;
-            //cout<<i<<' ';
-        }
-        return ans;
+        return max(a,b);
     }
 };
 
