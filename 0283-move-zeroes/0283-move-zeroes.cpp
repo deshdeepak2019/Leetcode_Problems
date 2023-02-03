@@ -7,10 +7,10 @@ public:
                 nums[k++]=nums[i];
             }
         }
-        cout<<k;
-        int p=nums.size()-k;
-        while(p--){
+        int j=nums.size()-k;
+        while(j--){
             nums[k++]=0;
         }
+        
     }
 };
